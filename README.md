@@ -18,8 +18,12 @@ sed -i 's/\].*//g' AD1mitochondria.fasta
 ## cat references into one file
 cat Ghirsutumv2.1.primaryTrs.fa.gz AD1mitochondria.fasta > TM1.nuclNmt.transcript.fasta
 
-## load bowtie2 Version: 2.2.6 
-module load bowtie2
-## build bowtie reference
-bowtie2-build TM1.nuclNmt.transcript.fasta TM1new
+## load bwa
+module load bwa
+## build reference index
+bwa index TM1.nuclNmt.transcript.fasta
+
+## run slurm array 
+sbatch /work/LAS/jfw-lab/erdostal/CisTrans/CisTrans.CEGedit.slurm
+
 
