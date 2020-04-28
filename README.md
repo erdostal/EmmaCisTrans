@@ -33,3 +33,5 @@ htseq-count -f bam --idattr Parent --stranded=no sortbam/SDPF-Maxxa-S1-202_FCH35
 for m in $(ls *counts.txt); do echo $m; cut $m -f2 |awk '{total = total + $1}END{print total}'; done
 
 
+
+
