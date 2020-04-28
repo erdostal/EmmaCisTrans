@@ -26,4 +26,10 @@ bwa index TM1.nuclNmt.transcript.fasta
 ## run slurm array 
 sbatch /work/LAS/jfw-lab/erdostal/CisTrans/CisTrans.CEGedit.slurm
 
+## Generate count files from bams
+htseq-count -f bam --idattr Parent --stranded=no sortbam/SDPF-Maxxa-S1-202_FCH35H3BBXX-HKRDCOTwkbEACFRAAPEI-202_L3_.sort.bam Tx-JGI_G.hirsutum_v1.1.gene_exons.gff3.gz > counts/SDPFtest
+
+## Check quality of count files
+for m in $(ls *counts.txt); do echo $m; cut $m -f2 |awk '{total = total + $1}END{print total}'; done
+
 
