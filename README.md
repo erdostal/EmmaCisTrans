@@ -32,6 +32,9 @@ for j in $(ls sortbam/|grep 'bam$'); do samtools idxstat sortbam/$j > counts/${j
 ## Check quality of count files
 for m in $(ls *counts.txt); do echo $m; cut $m -f2 |awk '{total = total + $1}END{print total}'; done
 
+## Count raw reads from fastqs
+for j in $(ls RNAseq/*.fq.gz); do paste <(echo $j) <(zcat $j |  awk 'END{ print NR/4 }') >> your.file.txt; done
+
 
 
 
