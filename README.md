@@ -35,6 +35,8 @@ for m in $(ls *counts.txt); do echo $m; cut $m -f2 |awk '{total = total + $1}END
 ## Count raw reads from fastqs
 for j in $(ls RNAseq/*.fq.gz); do paste <(echo $j) <(zcat $j |  awk 'END{ print NR/4 }') >> your.file.txt; done
 
-
+## Hylite run  
+### slurm file = hylite_v05182020
+### hylite protocol = cistrans_protocol
 
 
