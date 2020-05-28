@@ -39,4 +39,7 @@ for j in $(ls RNAseq/*.fq.gz); do paste <(echo $j) <(zcat $j |  awk 'END{ print 
 ### slurm file = hylite_v05182020
 ### hylite protocol = cistrans_protocol
 
+## Processing output from hylite
+### cistrans.pre.r
+### hylitePCA.r
 
