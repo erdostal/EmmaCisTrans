@@ -43,3 +43,6 @@ for j in $(ls RNAseq/*.fq.gz); do paste <(echo $j) <(zcat $j |  awk 'END{ print 
 ### cistrans.pre.r
 ### hylitePCA.r
 
+## Based on PCAs Jing has suggested the following
+LD7-Maxxa-L2 is very likely LD9-Maxxa, correct it and give it a new name. SD7-F1-5, LD7-F1-4NF and LD7-F1-6 may be removed. But before that, probably first check alleic read counts. So far, PCAs are done at whole gene level, I  think the script will also check alleic level grouping
+
