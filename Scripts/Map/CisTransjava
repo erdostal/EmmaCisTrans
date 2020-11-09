@@ -1,0 +1,52 @@
+#!/bin/bash
+#SBATCH --job-name=array
+#SBATCH --array=1-169%15   $ <-- this says that there are 169 elements in the array (file sets), do elements 1-330, and only do 15 at a time so IT doesn't get pissed
+#SBATCH --nodes=1 
+#SBATCH --cpus-per-task=70 # this is how many it will assign to *each* of the jobs it spawns
+#SBATCH --mem=200G 
+#SBATCH --time=4-02:30:00
+#SBATCH --output=job.A2.%A_%a.out 
+#SBATCH --error=job.A2.%A_%a.err
+#SBATCH -J "CisTrans.trimArray"  # give your array a name to recognize it
+#SBATCH --mail-type=FAIL,END
+#SBATCH --mail-user=erdostal@iastate.edu 
+module load trimmomatic
+module load bwa
+module load samtools
+DIR=/work/LAS/jfw-lab/erdostal/CisTrans/RNAseq # I make a directory on /work where all my reads for a project will go in. This refers to that directory
+tDIR=/work/LAS/jfw-lab/erdostal/CisTrans/trimmed
+ref= TM1.nuclNmt.transcript.fasta # the reference genome you will map against
+thr=70 # the number of threads you will use *per job*
+# this grabs the files you will operate over
+# you may have to change the glob if your files are named "R1" instead of "1" or "fastq" vs "fq" etc
+# this says "get the name of file 1 by listing the files in DIR that end in .1.fq.gz 
+#     and only print the line (filename" that corresponds to the job number (SLURM_ARRAY_TASK_ID)"
+# file 2 is derived the same way, only using the .2.fq.gz
+# since the SLURM_ARRAY_TASK_ID is assigned by the job manager, it will be the same
+# BUT this is why consistent naming is important!
+# if file1 is 3rd in the ls, but file2 is 5th....it's going to match the wrong files 
+#    because it will match 3rd with 3rd because SLURM_ARRAY_TASK_ID is constant for each task
+file1=$(ls -1 $DIR/*.1.fq.gz | sed -n ${SLURM_ARRAY_TASK_ID}p)
+file2=$(ls -1 $DIR/*.2.fq.gz | sed -n ${SLURM_ARRAY_TASK_ID}p)
+# I use this to clean up crazy names
+# This says "take the basename of file1 (i.e., remove the directory/path)
+#     then also remove the .1.fq.gz ending and save this as $name
+# so something like: whatever/directory/A1-5_plant3_10DPA.1.fq.gz
+# will result in a name of : A1-5_plant3_10DPA
+# this is much nicer when converting files and giving them names
+# now we can have A1-5_plant3_10DPA.sam instead of A1-5_plant3_10DPA.1.fq.gz.sam
+# the latter of which is a TERRIBLE name
+name=$(basename $file1 .1.fq.gz) 
+# generate this index before running the array
+# bwa index $ref 
+# everywhere you see $name $ref $file1 $file2 
+# it will replace it with the stored value
+# e.g. $name will become A1-5_plant3_10DPA, from the above example
+# you will want to check all these options, including whether it will output to $tDIR 
+# you will also need a file of Adapters names Adapters.fa
+trimmomatic PE -threads $thr -trimlog $name.trimlog $DIR/$file1 $DIR/$file2 $tDIR/$name.trimmed.fq.gz ILLUMINACLIP:Adapters.fa:2:30:15 LEADING:28 TRAILING:28 SLIDINGWINDOW:8:28 SLIDINGWINDOW:1:10 MINLEN:75 TOPHRED33
+bwa mem -M -K 10000000 -R "@RG\tID:$name \tSM:$name \tPL:ILLUMINA" -t $thr $ref $file1 $file2 > $name.sam  ) &> $name.bwa.timelog
+# you will only tranform to bam if you are not using featureCounts
+samtools view -@ 2 -u -F 4 $name.sam | samtools sort -m 3G -o $name.sort.bam &> $name.bam.err
+samtools index $name.sort.bam
+ml # I usually do this so that it puts the module versions at the end of the joblog; this is relevant for publication

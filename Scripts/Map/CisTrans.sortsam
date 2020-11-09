@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --job-name=array
+#SBATCH --constraint=AVX2
+#SBATCH --array=1-84%15
+#SBATCH --nodes=1 
+#SBATCH --cpus-per-task=70
+#SBATCH --mem=200G 
+#SBATCH --time=4-02:30:00
+#SBATCH --output=job.A2.%A_%a.out 
+#SBATCH --error=job.A2.%A_%a.err
+#SBATCH -J "CisTrans.sort"  
+#SBATCH --mail-type=FAIL,END
+#SBATCH --mail-user=erdostal@iastate.edu 
+module load samtools
+DIR=/work/LAS/jfw-lab/erdostal/CisTrans/sam
+ 
+thr=70
+file1=$(ls -1 $DIR/*sam | sed -n ${SLURM_ARRAY_TASK_ID}p)
+name=$(basename $file1)
+
+
+samtools view -@ 2 -u -F 4 $name | samtools sort -m 3G -o $name.sort.bam &> $name.bam.err
+samtools index $file1.sort.bam
+ml 

@@ -1,0 +1,50 @@
+sample,lib_size,Accession,Treatment
+LD7-F1-1.counts.txt                     ,17356719,F1,LD7
+LD7-F1-2.counts.txt                     ,15653006,F1,LD7
+LD7-F1-3-FLW_.counts.txt                ,27845250,F1,LD7
+LD7-F1-4-NF_.counts.txt                        ,15689094,F1,LD7
+LD7-F1-5.counts.txt                           ,16534882,F1,LD7
+LD7-F1-6.counts.txt                             ,14500275,F1,LD7
+LD7-Maxxa-L1.counts.txt                         ,32873605,Maxxa,LD7
+LD7-Maxxa-L2.counts.txt                         ,15834150,Maxxa,LD7
+LD7-Maxxa-L3.counts.txt                         ,13972192,Maxxa,LD7
+LD7-TX2094-L1-NF_.counts.txt                         ,21289943,TX2094,LD7
+LD7-TX2094-L2-NF-215_L1_.counts.txt,24421447,TX2094,LD7
+LD7-TX2094-L2-NF_.counts.txt       ,22619115,TX2094,LD7
+LD7-TX2094-L3-NF_.counts.txt       ,23972575,TX2094,LD7
+LD9-F1-1-NF_.counts.txt ,21806731,F1,LD9
+LD9-F1-2-NF_.counts.txt ,18684630,F1,LD9
+LD9-F1-3-FLW_.counts.txt,23733340,F1,LD9
+LD9-F1-4-NF_.counts.txt ,22375552,F1,LD9
+LD9-F1-6-NF_.counts.txt ,19289008,F1,LD9
+LD9-Maxxa-L1.counts.txt,21334317,Maxxa,LD9
+LD9-Maxxa-L2.counts.txt,18224774,Maxxa,LD9
+LD9-Maxxa-L3-213.counts.txt,18822929,Maxxa,LD9
+LD9-Maxxa-L3-219.counts.txt,19947920,Maxxa,LD9
+LD9-TX2094-L1-NF.counts.txt,17526688,TX2094,LD9
+LD9-TX2094-L2-NF.counts.txt,19336460,TX2094,LD9
+LD9-TX2094-L3-NF.counts.txt,22424110,TX2094,LD9
+SD5-F1-1.counts.txt,13131439,F1,SD5
+SD5-F1-2.counts.txt ,13732781,F1,SD5
+SD5-F1-3.counts.txt ,12826895,F1,SD5
+SD5-F1-4_.counts.txt,23729883,F1,SD5
+SD5-F1-5.counts.txt ,16833257,F1,SD5
+SD5-F1-6_.counts.txt,17634929,F1,SD5
+SD5-Maxxa-S1.counts.txt,16714311,Maxxa,SD5
+SD5-Maxxa-S2.counts.txt,15218597,Maxxa,SD5
+SD5-Maxxa-S3.counts.txt,14392965,Maxxa,SD5
+SD5-TX2094-S1.counts.txt,14873139,TX2094,SD5
+SD5-TX2094-S2.counts.txt.txt ,14683850,TX2094,SD5
+SD5-TX2094-S3.counts.txt,16306589,TX2094,SD5
+SD7-F1-1.counts.txt     ,20810569,F1,SD7
+SD7-F1-2_.counts.txt    ,22943877,F1,SD7
+SD7-F1-3-227_L1_.counts                      ,22454285,F1,SD7
+SD7-F1-4_.counts.txt     ,19265348,F1,SD7
+SD7-F1-5.counts.txt,26758829,F1,SD7
+SD7-F1-6_.counts.txt,17258239,F1,SD7
+SD7-Maxxa-S1.counts.txt,15817010,Maxxa,SD7
+SD7-Maxxa-S2.counts.txt,14928302,Maxxa,SD7
+SD7-Maxxa-S3.counts.txt      ,16338632,Maxxa,SD7
+SD7-TX2094-S1.counts.txt,15931166,TX2094,SD7
+SD7-TX2094-S2.counts.txt,15863862,TX2094,SD7
+SD7-TX2094-S3.counts.txt,16346367,TX2094,SD7

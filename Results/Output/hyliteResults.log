@@ -1,0 +1,208 @@
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 14 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 11 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 12 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 11 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 10 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 7 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 7 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 7 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 13 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 12 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 13 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 12 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 11 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 15 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 19 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 12 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 10 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 11 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 11 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 12 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 13 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 13 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 14 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 10 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 11 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 13 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+
+[bam_sort_core] merging from 9 files and 1 in-memory blocks...
+
+
+Traceback (most recent call last):
+  File "/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/python-3.6.3-u4oaxsbnvbz6s7yxztqvvirlipfjrnx7/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/python-3.6.3-u4oaxsbnvbz6s7yxztqvvirlipfjrnx7/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/work/LAS/jfw-lab/HyLiTE-2.0.1-py3-none-any.whl/__main__.py", line 209, in <module>
+  File "/work/LAS/jfw-lab/HyLiTE-2.0.1-py3-none-any.whl/HyLiTE_main.py", line 176, in HyLiTE_main
+  File "/work/LAS/jfw-lab/HyLiTE-2.0.1-py3-none-any.whl/hylite/Hylite.py", line 162, in samtools_pipeline
+  File "/work/LAS/jfw-lab/HyLiTE-2.0.1-py3-none-any.whl/hylite/samtools_wrapper.py", line 293, in pipeline
+  File "/work/LAS/jfw-lab/HyLiTE-2.0.1-py3-none-any.whl/hylite/samtools_wrapper.py", line 191, in mpileup
+OSError: [Errno 14] Bad address
